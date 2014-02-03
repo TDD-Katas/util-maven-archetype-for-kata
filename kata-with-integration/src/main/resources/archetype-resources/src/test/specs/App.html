@@ -9,8 +9,27 @@
     </head>
     <body>
         <p>
-            The greeting for user <span concordion:set="${symbol_pound}firstName">Bob</span> will be:
-            <span concordion:assertEquals="greetingFor(${symbol_pound}firstName)">Hello Bob!</span>
+            The greeting for user 
+            <span concordion:set="${symbol_pound}firstName">Bob</span> 
+            <span concordion:set="${symbol_pound}secondName">Martin</span> will be:
+            <span concordion:assertEquals="statelessCheck(${symbol_pound}firstName, ${symbol_pound}secondName)">Hello Bob Martin !</span>
         </p>
+        
+        Example<br/>
+        <span concordion:execute="reset()" />
+        <div class="example">
+            <table concordion:execute="${symbol_pound}output = statefullCheck(${symbol_pound}time, ${symbol_pound}command)">
+                <tr>
+                    <th concordion:set="${symbol_pound}time">Time (sec)</th>
+                    <th concordion:set="${symbol_pound}command">Command</th>
+                    <th concordion:assertEquals="${symbol_pound}output">Expected Output</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>X</td>
+                    <td>0 - X</td>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>
