@@ -15,7 +15,7 @@ public class AppFixture {
         
         
         public void reset() {
-            //Reset prevoius state
+            //Reset previous state
         }
         
 	public String statefullCheck(String time, String command) {
